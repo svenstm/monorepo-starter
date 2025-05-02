@@ -30,7 +30,6 @@ export const defaultSchema= {
     env: 'PORT',
   },
   cors: {
-    doc: 'Cors configuration',
     origin: {
       default: 'http://localhost',
       env: 'CORS_ORIGIN',
@@ -75,9 +74,9 @@ export const defaultSchema= {
     },
   },
   mongodb: {
-    doc: 'MongoDB connection urls',
     main: {
       url: {
+        doc: 'MongoDB connection url',
         default: 'mongodb://127.0.0.1:27017/monorepo-starter',
         env: 'MONGODB_MAIN_URL',
       },

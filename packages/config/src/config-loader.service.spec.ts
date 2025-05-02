@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { CoreConfigModule } from './config.module';
 import { ConfigLoaderService } from './config-loader.service';
 import { defaultSchema } from './data/default.schema';
+import { afterEach, beforeEach, describe, expect, test } from 'vitest';
 
 describe('ConfigLoaderService', () => {
   let module: TestingModule;
@@ -22,6 +23,7 @@ describe('ConfigLoaderService', () => {
 
   describe('get()', () => {
     test('should return all data from config if no key is given', async () => {
+      // @ts-ignore
       const config = await configService.get();
       expect(config).toMatchObject({
         env: 'test',

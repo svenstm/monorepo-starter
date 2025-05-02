@@ -1,7 +1,7 @@
 import { DocumentType, Ref, ReturnModelType } from '@typegoose/typegoose';
 import { AnyParamConstructor } from '@typegoose/typegoose/lib/types';
 import moment from 'moment-timezone';
-import mongoose, { FilterQuery, PipelineStage, PopulateOptions, QueryOptions, SortOrder, UpdateQuery } from 'mongoose';
+import mongoose, { FilterQuery, PipelineStage, PopulateOptions, QueryOptions, SortOrder } from 'mongoose';
 import { escapeRegExp } from '@monorepo-starter/utils';
 import { isDocTypeOf, referenceToBson, referenceToId } from './utils';
 import { ModelRef } from './reference.typing';
@@ -354,7 +354,7 @@ export abstract class BaseRepositoryService<T extends { initialize: () => Docume
     return doc.populate(populate ?? this.populate);
   }
 
-  createCopy(existing: T|DocumentType<T>) {
+  createCopy(existing: T | DocumentType<T>) {
     const props = this.getPropOptions();
     const data: Partial<T> = {};
     for(const [key, options] of Object.entries(props)) {

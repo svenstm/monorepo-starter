@@ -1,12 +1,11 @@
 import { Inject, Injectable, Optional } from '@nestjs/common';
-import Flatted from 'flatted';
 import * as winston from 'winston';
 // @ts-ignore
 import RollbarTransport from 'winston-transport-rollbar-3';
 import { LoggerColorUtils } from './utils/colors.utils';
-import {LOGGER_OPTIONS, WINSTON} from './contants';
-import { pascalCase } from 'pascal-case';
-import {LoggerModuleOptions} from './interfaces/options.interface';
+import { LOGGER_OPTIONS } from './contants';
+import { pascalCase } from 'change-case';
+import { LoggerModuleOptions } from './interfaces/options.interface';
 
 @Injectable()
 export class LoggerBuilderService {

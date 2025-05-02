@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigLoaderService } from '@monorepo-starter/config';
-import {boolean} from 'boolean';
-import {LogLevel} from '@monorepo-starter/logger';
+import { boolean } from 'boolean';
+import { LogLevel } from '@monorepo-starter/logger';
 
 @Injectable()
 export class ConfigService {
@@ -11,6 +11,7 @@ export class ConfigService {
   ) {}
 
   getPort(): number {
+    // @ts-ignore
     return Number(this.config.get('port'));
   }
 

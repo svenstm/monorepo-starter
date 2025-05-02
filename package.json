@@ -13,13 +13,19 @@
     "test": "turbo run test"
   },
   "devDependencies": {
-    "turbo": "latest"
+    "turbo": "^2.5.2"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.0.0"
   },
-  "dependencies": {},
+  "packageManager": "pnpm@10.9.2",
   "license": "MIT",
   "author": "Sven Stam",
-  "keywords": ["nestjs", "monorepo", "turborepo", "graphql", "jwt"]
+  "keywords": [
+    "nestjs",
+    "monorepo",
+    "turborepo",
+    "graphql",
+    "jwt"
+  ]
 }

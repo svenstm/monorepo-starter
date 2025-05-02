@@ -20,7 +20,7 @@ export class UserModel {
   @prop()
   readonly phone?: string;
 
-  @prop({ default: 'client' })
+  @prop({ default: UserRole.CLIENT, type: String, enum: UserRole})
   readonly role: UserRole;
 
   @prop({ default: Date.now })

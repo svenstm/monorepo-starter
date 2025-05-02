@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { LoggerModule } from './logger.module';
 import { LoggerService } from './logger.service';
+import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 
 describe('LoggerService', () => {
   let module: TestingModule;
@@ -8,7 +9,7 @@ describe('LoggerService', () => {
 
   function spy() {
     const logger = {
-      log: jest.spyOn(loggerService, 'log' as any),
+      log: vi.spyOn(loggerService, 'log' as any),
     };
 
     return { logger };
@@ -34,7 +35,7 @@ describe('LoggerService', () => {
   describe('info()', () => {
     test('should log with info level', async () => {
       const spies = spy();
-      spies.logger.log.mockImplementation();
+      spies.logger.log.mockImplementationOnce(() => {});
 
       const message = 'fake_message';
       const meta = { foo: 'bar' };
@@ -50,7 +51,7 @@ describe('LoggerService', () => {
   describe('warn()', () => {
     test('should log with warn level', async () => {
       const spies = spy();
-      spies.logger.log.mockImplementation();
+      spies.logger.log.mockImplementationOnce(() => {});
 
       const message = 'fake_message';
       const meta = { foo: 'bar' };
@@ -66,7 +67,7 @@ describe('LoggerService', () => {
   describe('error()', () => {
     test('should log with error level', async () => {
       const spies = spy();
-      spies.logger.log.mockImplementation();
+      spies.logger.log.mockImplementationOnce(() => {});
 
       const message = 'fake_message';
       const meta = { foo: 'bar' };
@@ -82,7 +83,7 @@ describe('LoggerService', () => {
   describe('debug()', () => {
     test('should log with debug level', async () => {
       const spies = spy();
-      spies.logger.log.mockImplementation();
+      spies.logger.log.mockImplementationOnce(() => {});
 
       const message = 'fake_message';
       const meta = { foo: 'bar' };

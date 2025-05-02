@@ -1,5 +1,5 @@
 // https://stackoverflow.com/a/6969486/14190818
-export function escapeRegExp(string) {
+export function escapeRegExp(str: string) {
   // $& means the whole matched string
-  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
