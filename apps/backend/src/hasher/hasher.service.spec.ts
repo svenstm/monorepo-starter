@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { HasherModule } from './hasher.module';
 import { HasherService } from './hasher.service';
+import { beforeEach, describe, expect, it } from 'vitest';
 
 describe('HasherService', () => {
   let service: HasherService;

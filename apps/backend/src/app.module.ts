@@ -2,10 +2,11 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from './config/config.module';
 import { LoggerModule, LoggerModuleOptions } from '@monorepo-starter/logger';
 import { ConfigService } from './config/config.service';
-import { GraphQLModule } from '@nestjs/graphql';
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
+import { GraphQLModule } from '@nestjs/graphql';
+import type { ApolloDriverConfig } from '@nestjs/apollo';
+import { ApolloDriver } from '@nestjs/apollo';
 
 @Module({
   imports: [
@@ -30,7 +31,5 @@ import { UserModule } from './user/user.module';
     AuthModule,
     UserModule,
   ],
-  controllers: [],
-  providers: [],
 })
 export class AppModule {}
